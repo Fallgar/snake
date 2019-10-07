@@ -7,8 +7,8 @@ import Field from './Field';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.fieldSize = 5;
-    this.speed = 300;
+    this.fieldSize = 10;
+    this.speed = 150;
     this.fruit = {x: null, y: null};
     this.eventHandler = this.eventHandler.bind(this);
     this.score = 0;
@@ -119,14 +119,12 @@ class App extends React.Component {
 
   moveTail() {
     let tailArr = this.state.tail;
-    let tempArr = tailArr.map((val, ind, arr) => {
-      if (ind > 0) {
-        return arr[ind-1];
-      }
-    });
-    tempArr[0] = this.state.position;
+
+    tailArr.splice(tailArr.length - 1, 1);
+    tailArr.unshift(this.state.position);
+
     this.setState({
-      tail: tempArr
+      tail: tailArr,
     });
   }
 
