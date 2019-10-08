@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-wasd - movement
-q - pause/unpause
+## Controls
+wasd - movement<br>
+q - pause/unpause<br>
 
 ## Available Scripts
 
