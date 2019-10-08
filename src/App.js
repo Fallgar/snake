@@ -15,7 +15,7 @@ class App extends React.Component {
     this.direction = {x: 1, y: 0};
     this.state = {
       gameState: true,
-      msg: "Hello there",
+      msg: "",
       position: {x: 1, y: 1},
       direction: this.direction,
       tail: [],
@@ -49,7 +49,7 @@ class App extends React.Component {
   win() {
     clearInterval(this.timer);
     this.setState({
-      msg: "Nice"
+      msg: "You win"
     });
 
   }
@@ -103,7 +103,7 @@ class App extends React.Component {
 
   gameOver() {
     this.setState({
-      msg: "Big OUUUUUF",
+      msg: "You lose",
     });
     clearInterval(this.timer);
   }
